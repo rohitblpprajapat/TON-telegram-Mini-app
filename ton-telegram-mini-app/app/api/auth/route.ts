@@ -1,12 +1,12 @@
 import { encrypt, SESSION_DURATION } from "@/utils/session"
-import { validateTelgramWebAppData } from "@/utils/telegramAuth"
+import { validateTelegramWebAppData } from "@/utils/telegramAuth"
 import { NextResponse } from "next/server"
 import { cookies } from "next/headers"
 
 export async function POST(request:Request) {
     const { initData } = await request.json()
 
-    const ValidationResult = validateTelgramWebAppData(initData)
+    const ValidationResult = validateTelegramWebAppData(initData)
 
     if (ValidationResult.validatedData){
         console.log("Validation result: ", ValidationResult)
