@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 export default function TelegramAuth(){
     const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -33,7 +33,7 @@ export default function TelegramAuth(){
 
                 if (response.ok){
                     setIsAuthenticated(true)
-                    router.reload()
+                    router.refresh()
                 } else {
                     console.error('Authentication failed')
                     setIsAuthenticated(false)
